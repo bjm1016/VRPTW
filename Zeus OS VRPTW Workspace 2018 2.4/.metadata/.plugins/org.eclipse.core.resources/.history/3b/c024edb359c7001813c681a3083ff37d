@@ -1,0 +1,10 @@
+package vrptw;
+// because java doesn't have partial classes for some inexplicable reason. You did your best Oracle.
+public final class file {
+
+	public static VRPTWDepotList getDepotListFromExcel(String fileName)
+	{
+		
+		return new VRPTWDepotList();
+	}
+}

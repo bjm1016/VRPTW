@@ -1,0 +1,8 @@
+package vrptw;
+import edu.sru.thangiah.zeus.core.Depot; 
+public class VRPTWDepot 
+extends Depot
+{
+	
+	
+}

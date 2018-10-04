@@ -1,0 +1,13 @@
+package vrptw;
+
+import edu.sru.thangiah.zeus.core.Settings;
+
+public class VRPTWRoot {
+	
+	public VRPTWRoot() 
+	{
+		Settings.printDebug(0, "Hello World!");
+		
+	}
+
+}

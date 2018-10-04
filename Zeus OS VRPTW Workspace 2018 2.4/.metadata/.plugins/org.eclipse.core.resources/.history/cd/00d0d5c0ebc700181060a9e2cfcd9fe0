@@ -1,0 +1,20 @@
+package vrptw;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class VRPTW 
+{
+	int numVehicles = 0;
+	int numDepots = 0;
+	int numCustomers = 0;
+	int maxRouteDuration = 0;
+	int maxVehicleCapacity = 0;
+	
+	VRPTWDepotList depotList = new VRPTWDepotList();
+	for(VRPTWDepot depot : depotList)
+	{
+		System.out.println(depot.getDepotNum());
+	}
+}
+// end VRPTW class definition

@@ -1,0 +1,18 @@
+package vrptw;
+
+import edu.sru.thangiah.zeus.core.Settings;
+import edu.sru.thangiah.zeus.core.ZeusProblemInfo;
+
+public class VRPTWRoot {
+
+	public VRPTWRoot() 
+	{
+		   setProblemInfo();
+	}
+
+	void setProblemInfo() { 
+		ZeusProblemInfo.setTempFileLocation("temp");
+	    ZeusProblemInfo.setInputPath("data\\vrp\\problems\\");
+	    ZeusProblemInfo.setOutputPath("data\\vrp\\results\\"); 
+	} 
+}

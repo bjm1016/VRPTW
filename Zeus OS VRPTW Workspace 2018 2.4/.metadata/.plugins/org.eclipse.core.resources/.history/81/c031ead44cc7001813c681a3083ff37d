@@ -1,0 +1,32 @@
+package vrptw;
+import edu.sru.thangiah.zeus.core.Depot; 
+public class VRPTWDepot 
+extends Depot
+{
+	private float earliestTime;
+	private float latestTime; 
+	private float serviceTime;
+	private float demand;
+		
+	
+	
+	public void getEarliestTime(float t)
+	{
+		return earliestTime;
+	}
+	
+	public void getLatestTime(float t)
+	{
+		return latestTime;
+	}
+	
+	public void getServiceTime(float t)
+	{
+		return serviceTime;
+	}
+	
+	public void getDemand(float t)
+	{
+		return demand;
+	}
+}

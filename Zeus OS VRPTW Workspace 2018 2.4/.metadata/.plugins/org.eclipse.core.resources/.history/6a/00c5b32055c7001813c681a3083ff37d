@@ -1,0 +1,12 @@
+package vrptw;
+
+public class VRPTW 
+{
+	int numVehicles = 0;
+	int numDepots = 0;
+	int numCustomers = 0;
+	int maxRouteDuration = 0;
+	int maxVehicleCapacity = 0;
+
+	
+}// end VRPTW class definition
