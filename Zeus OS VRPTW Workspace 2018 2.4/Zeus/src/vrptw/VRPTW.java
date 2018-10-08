@@ -12,10 +12,11 @@ public class VRPTW
 	int numCustomers = 0;
 	int maxRouteDuration = 0;
 	int maxVehicleCapacity = 0;
+	file f = new file(ZeusProblemInfo.getInputPath() + "C101Data\\c104.xlsx");
 	public VRPTW()
 	{
-		VRPTWDepotList depotList = file.getDepotListFromExcel(ZeusProblemInfo.getInputPath() + "C101Data\\c104.xlsx");
-		System.out.println(depotList);
+		//VRPTWDepotList depotList = file.getDepotListFromExcel(ZeusProblemInfo.getInputPath() + "C101Data\\c104.xlsx");
+		//System.out.println(depotList); 
 	}
 }
 // end VRPTW class definition
