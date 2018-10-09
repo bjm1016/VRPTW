@@ -1,0 +1,25 @@
+package vrptw;
+import edu.sru.thangiah.zeus.core.ZeusProblemInfo;
+import edu.sru.thangiah.zeus.vrp.VRPAttributes;
+import edu.sru.thangiah.zeus.vrp.VRPNodesLinkedList;
+import edu.sru.thangiah.zeus.core.Attributes;
+//import the parent class
+import edu.sru.thangiah.zeus.core.Truck;
+public class VRPTWTruck extends Truck{
+	public VRPTWTruck(VRPTWTruckType truckType, VRPTWDepot depot)
+	{
+		
+	}
+	
+	
+	
+	
+	
+	private void setAttributes()
+	{
+		setMainNodes(new VRPNodesLinkedList());
+		  
+	    //Assign the attributes
+	    setAttributes(new VRPAttributes());
+	}
+}

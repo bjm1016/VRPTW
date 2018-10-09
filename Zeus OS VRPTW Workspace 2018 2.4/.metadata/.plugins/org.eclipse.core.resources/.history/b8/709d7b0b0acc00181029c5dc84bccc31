@@ -1,0 +1,26 @@
+package vrptw;
+import edu.sru.thangiah.zeus.core.NodesLinkedList;
+
+public class VRPTWNodesLinkedList extends NodesLinkedList{
+	
+	public VRPTWNodesLinkedList()
+	{
+		setHead(new VRPTWNodes());
+		setTail(new VRPTWNodes());
+		linkHeadTail();
+	}
+	
+	public VRPTWNodesLinkedList(VRPTWTruckType truckType, VRPTWDepot depot, int truckNum)
+	{
+		setTruckType(truckType);
+		setTruckNum(truckNum);
+		setHead(new VRPTWNodes(new VRPTWShipment()));
+		setTail(new VRPTWNodes(new VRPTWShipment()));
+		linkHeadTail();
+	}
+	
+	public VRPTWNodes getVRPTWHead()
+	{
+		return (VRPTWNodes) getHead();
+	}
+}

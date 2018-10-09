@@ -1,0 +1,10 @@
+package vrptw;
+import edu.sru.thangiah.zeus.core.Nodes;
+
+public class VRPTWNode extends Nodes{
+	
+	public VRPTWNode(VRPTWShipment shipment)
+	{
+		setShipment(shipment)
+	}
+}

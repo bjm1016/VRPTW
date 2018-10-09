@@ -14,17 +14,21 @@ public class file {
 	XSSFWorkbook workbook;
 	private VRPTWShipmentLinkedList shipmentList = new VRPTWShipmentLinkedList();
 	private VRPTWDepotList depotList = new VRPTWDepotList();
+	public VRPTWShipmentLinkedList getShipmentList() { return shipmentList; } 
+	public VRPTWDepotList getDepotList() { return depotList; } 
+	
+	
 	public file(String fn)
 	{
 		filename = fn;
-		workbook = getWorkbook(filename);
+		workbook = getWorkbook();
 		getProblemInfoFromExcel();
 		getShipmentListFromExcel();
 		getDepotListFromExcel();
 		System.out.println(fileIncrement);
 	}
 
-	private XSSFWorkbook getWorkbook(String filename)
+	private XSSFWorkbook getWorkbook()
 	{
 		XSSFWorkbook workbook = new XSSFWorkbook();    
 		FileInputStream fis;		
@@ -39,6 +43,7 @@ public class file {
 		}
 
 	}
+	
 	public void getProblemInfoFromExcel()
 	{
 		XSSFRow row = workbook.getSheetAt(0).getRow(1);
@@ -105,5 +110,25 @@ public class file {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+  }
+	
+	private void getTruckInfoFromExcel()
+	{
+		float capacity;
+		float maxTravelTime;
+		try{
+		XSSFSheet sheet = workbook.getSheetAt(0);
+		XSSFRow row = sheet.getRow(0);
+		capacity = Float.parseFloat(row.getCell(4).toString());
+		maxTravelTime = Float.parseFloat(row.getCell(6).toString());
+		VRPTWTruckType truckType = new VRPTWTruckType(1, capacity, maxTravelTime);
+		ZeusProblemInfo.addTruckTypes(truckType);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
 	}
+	
 }

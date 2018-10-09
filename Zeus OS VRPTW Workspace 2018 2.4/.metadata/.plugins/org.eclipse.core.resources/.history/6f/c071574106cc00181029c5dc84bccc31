@@ -1,0 +1,8 @@
+package vrptw;
+import edu.sru.thangiah.zeus.core.ZeusProblemInfo;
+import edu.sru.thangiah.zeus.core.Attributes;
+//import the parent class
+import edu.sru.thangiah.zeus.core.Truck;
+public class VRPTWTruck extends Truck{
+	public VRPTWTruck(VRPTW 
+}

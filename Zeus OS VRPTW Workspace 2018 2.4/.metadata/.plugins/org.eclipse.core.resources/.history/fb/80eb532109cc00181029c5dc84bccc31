@@ -1,0 +1,12 @@
+package vrptw;
+import edu.sru.thangiah.zeus.core.NodesLinkedList;
+
+public class VRPTWNodesLinkedList extends NodesLinkedList{
+	
+	public VRPTWNodesLinkedList()
+	{
+		setHead(new VRPTWNodes());
+		setTail(new VRPTWNodes());
+		linkHeadTail();
+	}
+}
