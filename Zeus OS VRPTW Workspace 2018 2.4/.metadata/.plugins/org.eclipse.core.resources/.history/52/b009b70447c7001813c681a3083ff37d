@@ -1,5 +1,0 @@
-package vrptw;
-// because java doesn't have partial classes for some inexplicable reason. 
-public final class file {
-
-}

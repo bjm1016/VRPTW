@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="edu.sru.thangiah.zeus.core.Settings"/>
 <fullyQualifiedTypeName name="vrptw.VRPTWRoot"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="org.apache.poi.xssf.usermodel.XSSFRow"/>
+<fullyQualifiedTypeName name="edu.sru.thangiah.zeus.core.ZeusProblemInfo"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

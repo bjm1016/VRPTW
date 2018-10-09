@@ -13,13 +13,14 @@ public class file {
 	String filename = ""; 
 	XSSFWorkbook workbook;
 	private VRPTWShipmentLinkedList shipmentList = new VRPTWShipmentLinkedList();
-
+	private VRPTWDepotList depotList = new VRPTWDepotList();
 	public file(String fn)
 	{
 		filename = fn;
 		workbook = getWorkbook(filename);
 		getProblemInfoFromExcel();
 		getShipmentListFromExcel();
+		getDepotListFromExcel();
 		System.out.println(fileIncrement);
 	}
 
@@ -97,6 +98,8 @@ public class file {
 			y = Integer.parseInt(row.getCell(0).toString());
 			dn = Integer.parseInt(row.getCell(0).toString());
 			depot = new VRPTWDepot(x, y, dn);
+			depotList.insertDepotLast(depot);
+			
 		}
 		catch (Exception e){
 			System.out.println(e.getMessage());

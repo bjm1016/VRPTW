@@ -1,5 +1,0 @@
-package vrptw;
-// because java doesn't have partial classes for some inexplicable reason. Well done oracle. You are the masters of inferiority. 
-public final class file {
-
-}
