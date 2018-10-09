@@ -1,0 +1,6 @@
+package vrptw;
+
+public class VRPTWShipmentLinkedList 
+extends ShipmentLinkedList{
+
+}
