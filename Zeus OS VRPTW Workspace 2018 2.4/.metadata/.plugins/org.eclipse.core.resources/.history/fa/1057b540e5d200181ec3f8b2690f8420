@@ -1,0 +1,17 @@
+package vrptw;
+
+import java.util.ArrayList;
+
+public class VRPTWUnviableList {
+	private ArrayList<VRPTWUnviable> badRoutes = new ArrayList<VRPTWUnviable>();
+	private int maxDistance;
+	private VRPTWDepot origin;
+	
+	
+	
+	public boolean checkFeasibility(VRPTWShipment a, VRPTWShipment b)
+	{	
+		
+		return true;
+	}
+}

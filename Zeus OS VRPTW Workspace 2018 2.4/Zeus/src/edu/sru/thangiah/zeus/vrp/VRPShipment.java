@@ -28,6 +28,7 @@ public class VRPShipment
 	    setXCoord(x);
 	    setYCoord(y);
 	    setDemand(q);
+	    
 	    //serviceTime = d;
 	    setTruckTypeNeeded(t);
 	    //pickUpPointName = p;

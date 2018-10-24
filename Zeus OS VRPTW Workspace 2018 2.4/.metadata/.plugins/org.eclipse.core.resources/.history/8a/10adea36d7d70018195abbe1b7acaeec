@@ -1,0 +1,17 @@
+package vrptw;
+
+public class VRPTWUnviable {
+
+	private int shipNum1; 
+	private int shipNum2;
+	public VRPTWUnviable(int shipmentNo1, int shipmentNo2)
+	{
+		shipNum1 = shipmentNo1;
+		shipNum2 = shipmentNo2;
+	}
+	public String toString()
+	{
+		return (shipNum1 + " -> " + shipNum2);
+	}
+	
+}

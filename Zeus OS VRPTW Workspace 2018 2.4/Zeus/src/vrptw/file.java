@@ -2,6 +2,7 @@ package vrptw;
 import edu.sru.thangiah.zeus.core.Settings;
 import edu.sru.thangiah.zeus.core.ZeusProblemInfo;
 import java.io.FileInputStream;
+import java.util.ArrayList;
 
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -16,8 +17,10 @@ public class file {
 	private VRPTWDepotList depotList = new VRPTWDepotList();
 	public VRPTWShipmentLinkedList getShipmentList() { return shipmentList; } 
 	public VRPTWDepotList getDepotList() { return depotList; } 
-	
-	
+	private ArrayList<VRPTWTruckType> ttList = new ArrayList<VRPTWTruckType>(); 
+	private ArrayList<VRPTWShipment> shipArrList = new ArrayList<VRPTWShipment>();
+	public ArrayList<VRPTWShipment> getShipArrList() { return shipArrList; }
+	public ArrayList<VRPTWTruckType> getTruckTypeList() { return ttList; } 
 	public file(String fn)
 	{
 		filename = fn;
@@ -25,7 +28,7 @@ public class file {
 		getProblemInfoFromExcel();
 		getShipmentListFromExcel();
 		getDepotListFromExcel();
-		System.out.println(fileIncrement);
+		getTruckInfoFromExcel();
 	}
 
 	private XSSFWorkbook getWorkbook()
@@ -78,8 +81,9 @@ public class file {
 			et = Float.parseFloat(row.getCell(4).toString()); 
 			lt = Float.parseFloat(row.getCell(5).toString());  
 			st = Float.parseFloat(row.getCell(6).toString());  	
-			VRPTWShipment a = new VRPTWShipment(x, y, et, lt, st, demand);
+			VRPTWShipment a = new VRPTWShipment(x, y, et, lt, st, demand, depotnumber);
 			shipmentList.insertShipment(a);
+			shipArrList.add(a);
 			}
 			catch (Exception e)
 			{
@@ -107,7 +111,7 @@ public class file {
 			
 		}
 		catch (Exception e){
-			System.out.println(e.getMessage());
+			System.out.println(e.toString());
 		}
 	}
 	
@@ -115,20 +119,22 @@ public class file {
 	
 	private void getTruckInfoFromExcel()
 	{
+		VRPTWTruckType truckType;
 		float capacity;
 		float maxTravelTime;
-		try{
+		//try{
 		XSSFSheet sheet = workbook.getSheetAt(0);
-		XSSFRow row = sheet.getRow(0);
-		capacity = Float.parseFloat(row.getCell(4).toString());
+		XSSFRow row = sheet.getRow(1);
+		try{ capacity = Float.parseFloat(row.getCell(5).toString()); } catch(Exception e) { capacity = 999999; } 
 		maxTravelTime = Float.parseFloat(row.getCell(6).toString());
-		VRPTWTruckType truckType = new VRPTWTruckType(1, capacity, maxTravelTime);
+		truckType = new VRPTWTruckType(1, maxTravelTime, capacity);
 		ZeusProblemInfo.addTruckTypes(truckType);
-		}
-		catch(Exception e)
-		{
-			System.out.println(e.getMessage());
-		}
+		ttList.add(truckType);
+		//}
+		//catch(Exception e)
+		//{
+		//	System.out.println("here" + e.toString());
+		//}
 	}
 	
 }

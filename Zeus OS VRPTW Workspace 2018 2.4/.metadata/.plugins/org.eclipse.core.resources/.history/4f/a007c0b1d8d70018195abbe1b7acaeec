@@ -1,0 +1,33 @@
+package vrptw;
+
+import java.util.Comparator;
+
+public class VRPTWUnviable implements Comparator<VRPTWUnviable> {
+
+	private int shipNum1; 
+	private int shipNum2;
+	public VRPTWUnviable(int shipmentNo1, int shipmentNo2)
+	{
+		shipNum1 = shipmentNo1;
+		shipNum2 = shipmentNo2;
+	}
+	public int getFirstShipNo()
+	{
+		return shipNum1;
+	}
+	public int getSecShipNo()
+	{
+		return shipNum2;
+	}
+	public String toString()
+	{
+		return (shipNum1 + " -> " + shipNum2);
+	}
+	
+	public boolean compare(VRPTWUnviable compare)
+	{
+		return (shipNum1 == compare.getFirstShipNo() && shipNum2 == compare.getSecShipNo());
+	}
+	
+	
+}

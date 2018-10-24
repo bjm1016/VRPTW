@@ -1,0 +1,16 @@
+package vrptw;
+
+import java.util.ArrayList;
+
+public class VRPTWUnviableList {
+	private ArrayList<VRPTWUnviable> badRoutes = new ArrayList<VRPTWUnviable>();
+	
+		
+	
+	
+	
+	public boolean checkFeasibility(VRPTWShipment a, VRPTWShipment b)
+	{
+		return true;
+	}
+}
