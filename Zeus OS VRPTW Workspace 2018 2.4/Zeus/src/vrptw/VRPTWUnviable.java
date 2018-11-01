@@ -1,33 +1,39 @@
 package vrptw;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 
 public class VRPTWUnviable {
 
-	private int shipNum1; 
+	private int shipNum;
+	private ArrayList<Integer> unviableList = new ArrayList<Integer>();
 	private int shipNum2;
-	public VRPTWUnviable(int shipmentNo1, int shipmentNo2)
+	public VRPTWUnviable(int shipmentNo)
 	{
-		shipNum1 = shipmentNo1;
-		shipNum2 = shipmentNo2;
+		shipNum = shipmentNo;
 	}
-	public int getFirstShipNo()
+	public int getShipNo()
 	{
-		return shipNum1;
+		return shipNum;
 	}
-	public int getSecShipNo()
-	{
-		return shipNum2;
-	}
+	
 	public String toString()
 	{
-		return (shipNum1 + " -> " + shipNum2);
+		String rtStr = "";
+		for(Integer i : unviableList)
+		{
+			rtStr += shipNum + "-> " + i + "\n";
+		}
+		return rtStr;
 	}
-	
-	public boolean equals(VRPTWUnviable compare)
+	public boolean has(int num)
 	{
-		return (shipNum1 == compare.getFirstShipNo() && shipNum2 == compare.getSecShipNo());
+		return unviableList.contains(num);
 	}
 	
+	public void addToList(int num)
+	{
+		unviableList.add(num);
+	}
 	
 }

@@ -17,13 +17,13 @@ public class VRPTW
 	VRPTWDepotList mainDepots = new VRPTWDepotList();
 	public VRPTW() 
 	{
-		f = new file(ZeusProblemInfo.getInputPath() + "C101Data\\c101.xlsx");
+		f = new file(ZeusProblemInfo.getInputPath() + "C101Data\\c104.xlsx");
 		mainShipments = f.getShipmentList();
 		mainDepots = f.getDepotList();
 		//System.out.println(depotList); 
 		System.out.println(mainShipments);
 		VRPTWUnviableList uvlist = new VRPTWUnviableList(f.getShipArrList(), f.getTruckTypeList(), mainDepots.getVRPHead());
-		System.out.print(uvlist);
+		uvlist.print();
 	}
 	
 }

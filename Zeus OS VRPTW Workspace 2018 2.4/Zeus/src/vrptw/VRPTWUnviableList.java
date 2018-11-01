@@ -27,16 +27,20 @@ public class VRPTWUnviableList {
 		ArrayList<VRPTWShipment> a = shipList;
 		for(VRPTWShipment testShip : shipList)
 		{
-			//System.out.println("running");
+			VRPTWUnviable badRoute = new VRPTWUnviable(testShip.getIndex());
+			
 			for(VRPTWShipment ship: a)
 			{
 				if(isFeasible(testShip, ship) == false)
 				{
-					VRPTWUnviable badRoute = new VRPTWUnviable(testShip.getIndex(), ship.getIndex());
-					badRoutes.add(badRoute);
+					//System.out.println("running");
+
+					badRoute.addToList(ship.getIndex());
 				}
 				
 			}
+			badRoutes.add(badRoute);
+			
 		}
 	}
 	
@@ -86,12 +90,15 @@ public class VRPTWUnviableList {
 	
 	public boolean contains(int shipNum, int secShipNum)
 	{
-		VRPTWUnviable find = new VRPTWUnviable(shipNum, secShipNum);
+		//VRPTWUnviable find = new VRPTWUnviable(shipNum, secShipNum);
 		for(VRPTWUnviable a : badRoutes)
 		{
-			if(a.equals(find))
+			if(a.getShipNo() == shipNum)
 			{
+				if(a.has(secShipNum))
+				{
 				return true;
+				}
 			}
 		}
 		return false;
